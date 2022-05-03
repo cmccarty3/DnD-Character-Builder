@@ -12,6 +12,7 @@ public abstract class CharacterBuilder {
 		character = new Character();
 	}
 
+	public abstract void buildName();
 	public abstract void buildClass();
 	public abstract void buildRace();
 	public abstract void buildStats();

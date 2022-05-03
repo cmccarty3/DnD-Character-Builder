@@ -1,5 +1,9 @@
 import javax.swing.JFrame;
 
+import model.builder.Character;
+import model.builder.CharacterBuildDirector;
+import model.builder.CharacterBuilder;
+import model.builder.DefaultCharacterBuilder;
 import view.CharacterScreen;
 
 public class Main {
@@ -16,6 +20,14 @@ public class Main {
 		window.setResizable(false);
 		window.pack();
 		window.setVisible(true);
+
+		// Default Character
+		CharacterBuildDirector director = new CharacterBuildDirector();
+		CharacterBuilder builder = new DefaultCharacterBuilder();
+		director.setCharacterBuilder(builder);
+		director.createCharacter();
+		Character character = director.getCharacter();
+		System.out.println(character);
 		
 	} 
 }

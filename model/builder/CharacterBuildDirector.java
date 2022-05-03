@@ -14,9 +14,10 @@ public class CharacterBuildDirector {
 
 	public void createCharacter() {
 		characterBuilder.createCharacter();
+		characterBuilder.buildName();
+		characterBuilder.buildRace();
 		characterBuilder.buildClass();
 		characterBuilder.buildStats();
-		characterBuilder.buildRace();
 	}
 	
 }
