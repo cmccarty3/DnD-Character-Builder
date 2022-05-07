@@ -3,8 +3,8 @@ package model.builder;
 import java.util.Arrays;
 import java.util.Random;
 
-public class DefaultCharacterBuilder extends CharacterBuilder {
-
+public class DefaultCharacterBuilder extends CharacterBuilder 
+{
 	private Random random = new Random();
 	int[] stats = new int[Character.STATS_AMT]; // 6
 	int[] statsRoll = new int[4]; // 4d6
@@ -12,30 +12,37 @@ public class DefaultCharacterBuilder extends CharacterBuilder {
 	int statRollAdded = 0;
 
 	@Override
-	public void buildName() {
+	public void buildName() 
+	{
 		character.setCharacterName("Joe Schmoe");
 	}
 
 	@Override
-	public void buildClass() {
+	public void buildClass() 
+	{
 		character.setCharacterClass("Fighter");
 	}
 
 	@Override
-	public void buildRace() {
+	public void buildRace() 
+	{
 		character.setCharacterRace("Human");
 	}
 
 	@Override
-	public void buildStats() {
+	public void buildStats() 
+	{
 		// 4d6 for each of the 6 main stats, discarding the lowest roll
-		for (int s = 0; s < Character.STATS_AMT; s++) {
+		for (int s = 0; s < Character.STATS_AMT; s++) 
+		{
 			statRollAdded = 0;
-			for (int i = 0; i < statsRoll.length; i++) {
+			for (int i = 0; i < statsRoll.length; i++) 
+			{
 				statsRoll[i] = 1 + random.nextInt(5);
 			}
 			sortEm(statsRoll);
-			for (int j = 1; j < statsRoll.length; j++) {
+			for (int j = 1; j < statsRoll.length; j++) 
+			{
 				statsRollAdjusted[j - 1] = statsRoll[j];
 			}
 			statRollAdded = addEm(statsRollAdjusted);
@@ -52,20 +59,20 @@ public class DefaultCharacterBuilder extends CharacterBuilder {
 	}
 
 	// sorting an array from low to high
-	private int[] sortEm(int[] stats) {
+	private int[] sortEm(int[] stats) 
+	{
 		Arrays.sort(stats);
 		return stats;
 	}
 
 	// adding up total of an array
-	private int addEm(int[] statsRollAdjusted) {
+	private int addEm(int[] statsRollAdjusted) 
+	{
 		int totalStats = 0;
-		for (int i = 0; i < statsRollAdjusted.length; i++) {
+		for (int i = 0; i < statsRollAdjusted.length; i++) 
+		{
 			totalStats += statsRoll[i];
 		}
 		return totalStats;
-	}
-
-
-	
+	}	
 }

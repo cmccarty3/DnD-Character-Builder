@@ -1,7 +1,7 @@
 package model.builder;
 
-public class Character {
-
+public class Character 
+{
 	public static final int STATS_AMT = 6;
 
 	private String characterClass;
@@ -15,45 +15,54 @@ public class Character {
 	private int wisdom;
 	private int charisma;
 	
-	public void setCharacterClass(String characterClass) {
+	public void setCharacterClass(String characterClass) 
+	{
 		this.characterClass = characterClass;
 	}
 
-	public void setCharacterRace(String characterRace) {
+	public void setCharacterRace(String characterRace) 
+	{
 		this.characterRace = characterRace;
 	}
 
-	public void setCharacterName(String characterName) {
+	public void setCharacterName(String characterName) 
+	{
 		this.characterName = characterName;
 	}
 
-	public void setStrength(int strength) {
+	public void setStrength(int strength) 
+	{
 		this.strength = strength;
 	}
 
-	public void setDexterity(int dexterity) {
+	public void setDexterity(int dexterity) 
+	{
 		this.dexterity = dexterity;
 	}
 
-	public void setConstitution(int constitution) {
+	public void setConstitution(int constitution) 
+	{
 		this.constitution = constitution;
 	}
 
-	public void setIntelligence(int intelligence) {
+	public void setIntelligence(int intelligence) 
+	{
 		this.intelligence = intelligence;
 	}
 
-	public void setWisdom(int wisdom) {
+	public void setWisdom(int wisdom) 
+	{
 		this.wisdom = wisdom;
 	}
 
-	public void setCharisma(int charisma) {
+	public void setCharisma(int charisma) 
+	{
 		this.charisma = charisma;
 	}
 
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "Character["+characterName+", "+characterRace+", "+characterClass+" Strength: "+strength+", Dexterity: "+dexterity+", Constitution: "+constitution+", Intelligence: "+intelligence+", Wisdom: "+wisdom+", Charisma "+charisma+"]";
-	}
-	
+	}	
 }
