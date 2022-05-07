@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import java.awt.Dimension;
 
 import model.builder.Character;
 import model.builder.CharacterBuildDirector;

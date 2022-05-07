@@ -5,11 +5,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JRadioButton;
-import javax.crypto.SealedObject;
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -39,6 +36,7 @@ public class CharacterScreen
 	private JTextField intelligenceField = new JTextField();
 	private JTextField wisdomField = new JTextField();
 	private JTextField charismaField = new JTextField();
+	private JTextField totalStatsField = new JTextField();
 
 	private JLabel nameLabel = new JLabel("Name", SwingConstants.LEFT);
 	private JLabel classLabel = new JLabel("Class", SwingConstants.LEFT);
@@ -46,18 +44,19 @@ public class CharacterScreen
 	private JLabel raceLabel = new JLabel("Race", SwingConstants.LEFT);
 	private JLabel backgroundLabel = new JLabel("Background", SwingConstants.LEFT);
 	private JLabel experienceLabel = new JLabel("Experience", SwingConstants.LEFT);
-	private JLabel armorClassLabel = new JLabel("Armor Class", SwingConstants.LEFT);
-	private JLabel initiativeLabel = new JLabel("Initiative", SwingConstants.LEFT);
-	private JLabel speedLabel = new JLabel("Speed", SwingConstants.LEFT);
-	private JLabel hitPointsLabel = new JLabel("Hit Points", SwingConstants.LEFT);
-	private JLabel passivePerceptionLabel = new JLabel("Passive Perception", SwingConstants.LEFT);
-	private JLabel proficiencyBonusLabel = new JLabel("Proficiency Bonus", SwingConstants.LEFT);
-	private JLabel strengthLabel = new JLabel("Strength", SwingConstants.LEFT);
-	private JLabel dexterityLabel = new JLabel("Dexterity", SwingConstants.LEFT);
-	private JLabel constitutionLabel = new JLabel("Constitution", SwingConstants.LEFT);
-	private JLabel intelligenceLabel = new JLabel("Intelligence", SwingConstants.LEFT);
-	private JLabel wisdomLabel = new JLabel("Wisdom", SwingConstants.LEFT);
-	private JLabel charismaLabel = new JLabel("Charisma", SwingConstants.LEFT);
+	private JLabel armorClassLabel = new JLabel("Armor Class", SwingConstants.CENTER);
+	private JLabel initiativeLabel = new JLabel("Initiative", SwingConstants.CENTER);
+	private JLabel speedLabel = new JLabel("Speed", SwingConstants.CENTER);
+	private JLabel hitPointsLabel = new JLabel("Hit Points", SwingConstants.CENTER);
+	private JLabel passivePerceptionLabel = new JLabel("Passive Perception", SwingConstants.CENTER);
+	private JLabel proficiencyBonusLabel = new JLabel("Proficiency Bonus", SwingConstants.CENTER);
+	private JLabel strengthLabel = new JLabel("Strength", SwingConstants.CENTER);
+	private JLabel dexterityLabel = new JLabel("Dexterity", SwingConstants.CENTER);
+	private JLabel constitutionLabel = new JLabel("Constitution", SwingConstants.CENTER);
+	private JLabel intelligenceLabel = new JLabel("Intelligence", SwingConstants.CENTER);
+	private JLabel wisdomLabel = new JLabel("Wisdom", SwingConstants.CENTER);
+	private JLabel charismaLabel = new JLabel("Charisma", SwingConstants.CENTER);
+	private JLabel totalStatsLabel = new JLabel("Total: ", SwingConstants.CENTER);
 
 	private JRadioButton strengthSaveButton = new JRadioButton("Strength");
 	private JRadioButton dexteritySaveButton = new JRadioButton("Dexterity");
@@ -114,7 +113,7 @@ public class CharacterScreen
 		cp.add(BorderLayout.NORTH, northPanel);
 
 		JPanel westPanel = new JPanel();
-		westPanel.setLayout(new GridLayout(12, 1, 5, 5));
+		westPanel.setLayout(new GridLayout(14, 1, 5, 5));
 		westPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
 		westPanel.add(strengthLabel);
 		westPanel.add(strengthField);
@@ -128,16 +127,16 @@ public class CharacterScreen
 		westPanel.add(wisdomField);
 		westPanel.add(charismaLabel);
 		westPanel.add(charismaField);
+		westPanel.add(totalStatsLabel);
+		westPanel.add(totalStatsField);
+		totalStatsField.setEditable(false);
 		cp.add(BorderLayout.WEST, westPanel);
 
-		ButtonGroup saveGroup = new ButtonGroup();
-		saveGroup.add(strengthSaveButton);
-		saveGroup.add(dexteritySaveButton);
-		saveGroup.add(constitutionSaveButton);
-		saveGroup.add(intelligenceSaveButton);
-		saveGroup.add(wisdomSaveButton);
-		saveGroup.add(charismaSaveButton);
-
+		/*
+			Will add an action listener to each radiobutton which will update a counter 
+			if selecteed. When the counter is reached, add a function to make the others 
+			unclickable using: .setActionCommand("disable");
+		*/
 		JPanel centerPanelSaves = new JPanel();
 		centerPanelSaves.setLayout(new GridLayout(3, 2));
 		centerPanelSaves.setBorder(BorderFactory.createTitledBorder("Saves"));
@@ -182,16 +181,22 @@ public class CharacterScreen
 		eastPanel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		eastPanel.add(proficiencyBonusLabel);
 		eastPanel.add(proficiencyBonusField);
+		proficiencyBonusField.setEditable(false);
 		eastPanel.add(armorClassLabel);
 		eastPanel.add(armorClassField);
+		armorClassField.setEditable(false);
 		eastPanel.add(hitPointsLabel);
 		eastPanel.add(hitPointsField);
+		hitPointsField.setEditable(false);
 		eastPanel.add(initiativeLabel);
 		eastPanel.add(initiativeField);
+		initiativeField.setEditable(false);
 		eastPanel.add(speedLabel);
 		eastPanel.add(speedField);
+		speedField.setEditable(false);
 		eastPanel.add(passivePerceptionLabel);
 		eastPanel.add(passivePerceptionField);
+		passivePerceptionField.setEditable(false);
 		cp.add(BorderLayout.EAST, eastPanel);
 
 		JPanel southPanel = new JPanel();
