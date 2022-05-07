@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.awt.Dimension;
 
 import model.builder.Character;
 import model.builder.CharacterBuildDirector;
@@ -13,12 +14,13 @@ public class Main
 		JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setTitle(("Character Builder"));
-		window.setLocation(500, 200);
+		window.setLocation(700, 100);
+		// window.setPreferredSize(new Dimension(600, 800));
 
 		var characterScreen = new CharacterScreen(window);
 		characterScreen.init();
 
-		window.setResizable(false);
+		// window.setResizable(false);
 		window.pack();
 		window.setVisible(true);
 
