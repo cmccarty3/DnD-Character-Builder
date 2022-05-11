@@ -14,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import controller.CharacterScreenListener;
+
 public class CharacterScreen 
 {
 	private JFrame window;
@@ -83,7 +85,8 @@ public class CharacterScreen
 	private JRadioButton stealthButton = new JRadioButton("Stealth");
 	private JRadioButton survivalButton = new JRadioButton("Survival");
 
-	JButton rollStatsButton = new JButton("Roll Stats");
+	JButton buildCharacterButton = new JButton("Build Character");
+	JButton rerollStatsButton = new JButton("Reroll Stats");
 	JButton quitButton = new JButton("Quit");
 
 	public CharacterScreen(JFrame window) 
@@ -200,10 +203,62 @@ public class CharacterScreen
 		cp.add(BorderLayout.EAST, eastPanel);
 
 		JPanel southPanel = new JPanel();
-		southPanel.add(rollStatsButton);
+		southPanel.add(buildCharacterButton);
+		southPanel.add(rerollStatsButton);
 		southPanel.add(quitButton);
 		cp.add(BorderLayout.SOUTH, southPanel);
 
-		quitButton.addActionListener(event -> System.exit(0));
+		CharacterScreenListener listener = new CharacterScreenListener(this);
+		buildCharacterButton.addActionListener(listener);
+		rerollStatsButton.addActionListener(listener);
+		quitButton.addActionListener(listener);
+	}
+
+	public JButton getBuildCharacterButton() {
+		return buildCharacterButton;
+	}
+
+	public JButton getRerollStatsButton() {
+		return rerollStatsButton;
+	}
+
+	public JButton getQuitButton() {
+		return quitButton;
+	}
+
+	public JTextField getStrengthField() {
+		return strengthField;
+	}
+
+	public JTextField getDexterityField() {
+		return dexterityField;
+	}
+
+	public JTextField getConstitutionField() {
+		return constitutionField;
+	}
+
+	public JTextField getIntelligenceField() {
+		return intelligenceField;
+	}
+
+	public JTextField getWisdomField() {
+		return wisdomField;
+	}
+
+	public JTextField getCharismaField() {
+		return charismaField;
+	}
+
+	public JTextField getNameField() {
+		return nameField;
+	}
+
+	public JTextField getClassField() {
+		return classField;
+	}
+
+	public JTextField getRaceField() {
+		return raceField;
 	}
 }

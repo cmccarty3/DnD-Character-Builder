@@ -38,7 +38,9 @@ public class DefaultCharacterBuilder extends CharacterBuilder
 			statRollAdded = 0;
 			for (int i = 0; i < statsRoll.length; i++) 
 			{
-				statsRoll[i] = 1 + random.nextInt(5);
+				statsRoll[i] = 1 + random.nextInt(6);
+				if (statsRoll[i] == 1)
+					statsRoll[i] = 1 + random.nextInt(6);
 			}
 			sortEm(statsRoll);
 			for (int j = 1; j < statsRoll.length; j++) 
